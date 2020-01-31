@@ -9,9 +9,8 @@ The general election polls (for example [Pennsylvania](https://projects.fivethir
 ```math
 a^2+b^2=c^2
 ```
+![equation](https://latex.codecogs.com/gif.latex?y_j&space;\sim&space;Multinomial(n_j,&space;\bm{p_j}))
 
-
-![equation](http://latex.codecogs.com/gif.latex?y_j \sim Multinomial(n_j, \bm{p_j}))
 $\bm{y_j} \sim Multinomial(n_j, \bm{p_j})$
 
 Assuming a Dirichlet prior on $\bm{p_j}$.
