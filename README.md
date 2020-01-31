@@ -4,7 +4,9 @@ FiveThirtyEight recently added a tool for viewing summaries of many of the polls
 It occurs to me that any vote worth making in the primary must produce a viable candidate among the swing states in the general election.
 In pursuit of that end I wrote the code here to consider how the hypothetical runoff style polls, for assessing the general election, would position each democratic candidate when you further consider the somewhat unintuitve behavior of the electoral college.  
 
-The general election polls (for example [Pennsylvania](https://projects.fivethirtyeight.com/polls/president-general/pennsylvania/)) takes the form of trinomial outcomes for each candidate as though they were matched-up against Trump as well as some other (third party or write-in) candiate in each state.
+The general election polls (for example [Pennsylvania](https://projects.fivethirtyeight.com/polls/president-general/pennsylvania/)) take the form of trinomial outcomes for the number of polled registered voters for a democratic candidate matched-up against Trump, as well as some other (third party or write-in) candiate in each state.
+
+![equation](https://latex.codecogs.com/gif.latex?\bm{y_j}&space;=&space;[Democrat,&space;Trump,&space;Other])
 
 ![equation](https://latex.codecogs.com/gif.latex?\bm{y_j}&space;\sim&space;Multinomial(n_j,&space;\bm{p_j}))
 
