@@ -53,8 +53,8 @@ of electoral college votes each candidate will get from those states. In this si
 prediction to Iowa, Florida, Michigan, Nevada, New Hampshire, Virginia, and Wisconsin. Although I would like to 
 add Minnesota, Ohio, Nevada, North Carolina, and Pennsylvania, pending decent polls from those states. I have 
 tried to limit poll inclusion to polls present on FivethirtyEight appearing within the last two-three months and 
-that achieve at least a B+ rating pollster rating from FivethirtyEight. If you can think of any other states that 
-deserve to be considered, I welcome you to provide me a convincing argument as to why, If I am convinced and I can 
+that achieve at least a B+ pollster rating from FivethirtyEight. If you can think of any other states that 
+deserve to be considered, I welcome you to provide me a convincing argument as to why. If I am convinced and I can 
 find the data I will include it.
 
 Candidate electoral boxplots
