@@ -20,7 +20,8 @@ gives conjugacy and produces the following posterior,
 One may specify a particular prior through the choice of ![equation](https://latex.codecogs.com/gif.latex?\bm{\alpha}) 
 components relative to each other; prior strength is then selected by the 
 absolute scale of the components of ![equation](https://latex.codecogs.com/gif.latex?\bm{\alpha}). 
-At this time I am selecting the laplace prior over the ![equation](https://latex.codecogs.com/gif.latex?\bm{\alpha}).
+At this time I am selecting the laplace prior over ![equation](https://latex.codecogs.com/gif.latex?\bm{p}) by 
+selecting all ![equation](https://latex.codecogs.com/gif.latex?\bm{\alpha}=1).
 
 # Simulation
 

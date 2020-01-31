@@ -140,19 +140,23 @@ box = do.call(cbind, cast)[,order(sequence(sapply(cast, ncol)))]
 #
 
 #
-pdf('collegeVotes.pdf', width=12)
+probWins = colSums((cast[['dCast']]-cast[['tCast']])>0)/M
+l = list('a'=names(probWins), 'b'=rep(':', length(probWins)), 'c'=sprintf('%s ', round(probWins, 3)))
+l = do.call(c, l)[order(sequence(sapply(l, length)))]
+
+#
+pdf('collegeVotes.pdf', width=11)
 boxplot(box,
         col     = c('red', 'blue', 'grey'),
         outline = F,
 	ylim    = c(0, totalVotes),
         #names   = names,
         #at      = ats,
-        ylab    = "Votes",
-        main    = "Electoral College Votes"
+        ylab    = "Electoral College Votes",
+        main    = sprintf("Pr(Democrat E-Votes>Trump among swing states)=%s", paste(l, collapse=c("")))
 )
 legend('topright', legend=c('Trump', 'Democrat', 'Other'), fill=c('red', 'blue', 'grey'))
 dev.off()
 
-#
-probWins = colSums((cast[['dCast']]-cast[['tCast']])>0)/M
+
 
