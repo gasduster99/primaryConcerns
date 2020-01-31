@@ -6,7 +6,7 @@ In pursuit of that end I wrote the code here to consider how the hypothetical ru
 
 The general election polls (for example [Pennsylvania](https://projects.fivethirtyeight.com/polls/president-general/pennsylvania/)) take the form of trinomial outcomes for the number of polled registered voters for a democratic candidate matched-up against Trump, as well as some other (third party or write-in) candiate in each state.
 
-\\https://www.codecogs.com/latex/eqneditor.php
+<!--https://www.codecogs.com/latex/eqneditor.php-->
 ![equation](https://latex.codecogs.com/gif.latex?\bm{y}&space;=&space;[Democrat,&space;Trump,&space;Other])
 
 ![equation](https://latex.codecogs.com/gif.latex?\bm{y}&space;\sim&space;Multinomial(n,&space;\bm{p}))
