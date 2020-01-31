@@ -1,4 +1,4 @@
-# primaryConcerns
+# The Premise
 
 FiveThirtyEight recently added a tool for viewing summaries of many of the polls that they use in models to better understand the upcoming 2020 election.
 It occurs to me that any vote worth making in the primary must produce a viable candidate among the swing states in the general election.
@@ -20,5 +20,9 @@ One may specify a particular prior through the choice of ![equation](https://lat
 components relative to each other; prior strength is then selected by the 
 absolute scale of the components of ![equation](https://latex.codecogs.com/gif.latex?\bm{p_j}). 
 At this time I am selecting the laplace prior over the ![equation](https://latex.codecogs.com/gif.latex?\bm{\alpha}).
+
+# Simulation
+
+
 
 
