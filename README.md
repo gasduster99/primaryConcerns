@@ -42,8 +42,23 @@ following Monte Carlo integral,
 For predicting the number of votes in the general election the multinomial 
 size n is given by the number of votes cast in the given state in 2016 
 as sourced from [http://www.electproject.org/2016g](http://www.electproject.org/2016g). 
-This produces a slight scaling of variability between states, but based on 
-sensativity analysis misspecifying n here does not dramatically change the results.
+This produces a slight scaling of variability between states, but (based on preliminary 
+sensativity analysis) misspecifying n here does not dramatically change the results.
 
+Sampling a million y* voting outcomes and assigning the appropriate number of electoral college votes 
+to the winner in each case produces a distribution of electoral college votes in each state for each democratic 
+candidate against Trump. Summing these distributions over the relavent states gives a prediction for number 
+of electoral college votes each candidate will get from those states. In this simulation I have limited the
+prediction to Iowa, Florida, Michigan, Nevada, New Hampshire, Virginia, and Wisconsin. Although I would like to 
+add Minnesota, Ohio, Nevada, North Carolina, and Pennsylvania, pending decent polls from those states. I have 
+tried to limit poll inclusion to polls present on FivethirtyEight appearing within the last two-three months and 
+that achieve at least a B+ rating pollster rating from FivethirtyEight. If you can think of any other states that 
+deserve to be considered, I welcome you to provide me a convincing argument as to why, If I am convinced and I can 
+find the data I will include it.
 
+Candidate electoral boxplots
+
+Describe probability measure
+
+Display probability
 
