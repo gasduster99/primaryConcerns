@@ -153,7 +153,7 @@ boxplot(box,
         #names   = names,
         at      = seq(1, length(peeps)*4)[-seq(4, length(peeps)*4, 4)],
         ylab    = "Electoral College Votes",
-        main    = sprintf("Pr(Democrat eVotes>Trump among swing states) = %s", paste(l, collapse=c("")))
+        main    = sprintf("Pr(Democrat eVotes>Trump | swing states) = %s", paste(l, collapse=c("")))
 )
 legend('topright', legend=c('Trump', 'Democrat', 'Other'), fill=c('red', 'blue', 'grey'))
 dev.off()
