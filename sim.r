@@ -103,13 +103,15 @@ states = c("Iowa", "Florida", "Michigan", "Nevada", "NewHampshire", "Virginia", 
 #
 
 #
-M = 10^5
+M = 10^6
 
 #
-tCast = matrix(0, nrow=M, ncol=length(peeps))
-dCast = matrix(0, nrow=M, ncol=length(peeps))
-colnames(dCast) = peeps
-colnames(tCast) = peeps
+totalVotes = 0
+cast = list()
+cast[['tCast']] = matrix(0, nrow=M, ncol=length(peeps))
+cast[['dCast']] = matrix(0, nrow=M, ncol=length(peeps))
+cast[['oCast']] = matrix(0, nrow=M, ncol=length(peeps))
+colnames(cast[['dCast']]) = peeps
 for(state in states){
 	for(peep in peeps){
 		#nome = c(peep, 'trump', 'other')
@@ -122,11 +124,35 @@ for(state in states){
 			}else{ return(which(pred==max(pred))) }
 		})
 		#democrate numbers
-		dCast[who==1,peep] = dCast[who==1,peep]+votes[[state]]
+		cast[['dCast']][who==1,peep] = cast[['dCast']][who==1,peep]+votes[[state]]
 		#trump numbers
-		tCast[who==2,peep] = tCast[who==2,peep]+votes[[state]]
+		cast[['tCast']][who==2,peeps==peep] = cast[['tCast']][who==2,peeps==peep]+votes[[state]]
+		#other numbers
+		cast[['oCast']][who==3,peeps==peep] = cast[['oCast']][who==3,peeps==peep]+votes[[state]]
 	}
+	totalVotes = totalVotes + votes[[state]]
 }
+#
+box = do.call(cbind, cast)[,order(sequence(sapply(cast, ncol)))]
 
-probWins = colSums((dCast-tCast)>0)/M
+#
+#OUTPUT
+#
+
+#
+pdf('collegeVotes.pdf', width=12)
+boxplot(box,
+        col     = c('red', 'blue', 'grey'),
+        outline = F,
+	ylim    = c(0, totalVotes),
+        #names   = names,
+        #at      = ats,
+        ylab    = "Votes",
+        main    = "Electoral College Votes"
+)
+legend('topright', legend=c('Trump', 'Democrat', 'Other'), fill=c('red', 'blue', 'grey'))
+dev.off()
+
+#
+probWins = colSums((cast[['dCast']]-cast[['tCast']])>0)/M
 
