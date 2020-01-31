@@ -47,7 +47,7 @@ sensativity analysis) misspecifying n here does not dramatically change the resu
 
 Sampling a million y* voting outcomes and assigning the appropriate number of electoral college votes 
 to the winner in each case produces a distribution of electoral college votes in each state for each democratic 
-candidate against Trump. Summing these distributions over the relavent states gives a prediction for number 
+candidate against Trump. Summing these distributions over the relavent states gives a prediction for the number 
 of electoral college votes each candidate will get from those states. In this simulation I have limited the
 prediction to Iowa, Florida, Michigan, Nevada, New Hampshire, Virginia, and Wisconsin. Although I would like to 
 add Minnesota, Ohio, Nevada, North Carolina, and Pennsylvania, pending decent polls from those states. I have 
