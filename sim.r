@@ -141,7 +141,7 @@ box = do.call(cbind, cast)[,order(sequence(sapply(cast, ncol)))]
 
 #
 probWins = colSums((cast[['dCast']]-cast[['tCast']])>0)/M
-l = list('a'=names(probWins), 'b'=rep(':', length(probWins)), 'c'=sprintf('%s ', round(probWins, 3)))
+l = list('a'=names(probWins), 'b'=rep(':', length(probWins)), 'c'=sprintf('%s  ', round(probWins, 3)))
 l = do.call(c, l)[order(sequence(sapply(l, length)))]
 
 #
