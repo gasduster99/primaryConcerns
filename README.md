@@ -39,6 +39,11 @@ following Monte Carlo integral,
 
 ![equation](https://latex.codecogs.com/gif.latex?p(y^*|y)=\int&space;Multinomial(y^*|n,\bm{p})Dir(\bm{p}|\bm{y}&plus;\bm{\alpha})d\bm{p}.)
 
-For predicting the number of votes in the general election the multinomial size n is given by the number of number of votes cast in a given state in 2016 as sourced from [http://www.electproject.org/2016g](http://www.electproject.org/2016g).
+For predicting the number of votes in the general election the multinomial 
+size n is given by the number of votes cast in the given state in 2016 
+as sourced from [http://www.electproject.org/2016g](http://www.electproject.org/2016g). 
+This produces a slight scaling of variability between states, but based on 
+sensativity analysis misspecifying n here does not dramatically change the results.
+
 
 
