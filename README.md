@@ -58,6 +58,8 @@ find the data I will include it.
 
 Candidate electoral boxplots
 
+![image](https://github.com/gasduster99/primaryConcerns/blob/master/collegeVotes.pdf)
+
 Describe probability measure
 
 Display probability
