@@ -34,7 +34,7 @@ The above model based perspective gives a straight forward prediction for the
 number of votes each state will produce for each hypothetical general election matchup.
 The posterior predictive distribution for the number of votes each candidate will get is 
 
-![equation](https://latex.codecogs.com/gif.latex?p(\bm{y}^*|\bm{y})&space;=&space;\int Multinomial(y^*|n,&space;\bm{p})Dir(\bm{p}|\bm{y}+\bm{\alpha})d\bm{p})
+![equation](https://latex.codecogs.com/gif.latex?p(y^*|y)=\int&space;Multinomial(y^*|n,\bm{p})Dir(\bm{p}|\bm{y}&plus;\bm{\alpha})d\bm{p})
 
 
 
