@@ -61,7 +61,7 @@ Candidate electoral boxplots
 
 ![image](./collegeVotes.pdf?raw=true "Title"))
 
-![image](https://github.com/gasduster99/primaryConcerns/blob/master/collegeVotes.pdf)
+![image](https://github.com/gasduster99/primaryConcerns/blob/master/collegeVotes.pdf?raw=true)
 
 Describe probability measure
 
