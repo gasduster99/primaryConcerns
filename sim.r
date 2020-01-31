@@ -151,7 +151,7 @@ boxplot(box,
         outline = F,
 	ylim    = c(0, totalVotes),
         #names   = names,
-        #at      = ats,
+        at      = seq(1, length(peeps)*4)[-seq(4, length(peeps)*4, 4)],
         ylab    = "Electoral College Votes",
         main    = sprintf("Pr(Democrat eVotes>Trump among swing states) = %s", paste(l, collapse=c("")))
 )
