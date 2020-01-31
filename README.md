@@ -6,8 +6,6 @@ In pursuit of that end I wrote the code here to consider how the hypothetical ru
 
 The general election polls (for example [Pennsylvania](https://projects.fivethirtyeight.com/polls/president-general/pennsylvania/)) takes the form of trinomial outcomes for each candidate as though they were matched-up against Trump as well as some other (third party or write-in) candiate in each state.
 
-![equation](http://latex.codecogs.com/gif.latex?y_j=Democat, Trump, Other)
-
 ![equation](http://latex.codecogs.com/gif.latex?y_j \sim Multinomial(n_j, \bm{p_j}))
 $\bm{y_j} \sim Multinomial(n_j, \bm{p_j})$
 
