@@ -113,7 +113,7 @@ colnames(tCast) = peeps
 for(state in states){
 	for(peep in peeps){
 		#nome = c(peep, 'trump', 'other')
-		post = rdirichlet(M, ns[[state]]*p[[state]][[peep]])
+		post = rdirichlet(M, ns[[state]]*p[[state]][[peep]]+1)
 		who = apply(post, 1, function(x){
 			pred = rmultinom(1, size[[state]], x)
 			#print(pred)
