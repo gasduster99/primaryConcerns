@@ -30,11 +30,14 @@ As we all know, the person with the highest proportion of votes does not neccess
 has some number of electoral college votes which are generally speaking winner-take-all for the candidate who wins 
 the highest number of votes in the state.
 
+![image](https://upload.wikimedia.org/wikipedia/commons/4/49/ElectoralCollege2020.svg)
+
 The above model based perspective gives a straight forward prediction for the 
 number of votes each state will produce for each hypothetical general election matchup.
-The posterior predictive distribution for the number of votes each candidate will get is 
+The posterior predictive distribution for the number of votes each candidate will get is given by doing the 
+following Monte Carlo integral,
 
-![equation](https://latex.codecogs.com/gif.latex?p(y^*|y)=\int&space;Multinomial(y^*|n,\bm{p})Dir(\bm{p}|\bm{y}&plus;\bm{\alpha})d\bm{p})
+![equation](https://latex.codecogs.com/gif.latex?p(y^*|y)=\int&space;Multinomial(y^*|n,\bm{p})Dir(\bm{p}|\bm{y}&plus;\bm{\alpha})d\bm{p}.)
 
 
 
