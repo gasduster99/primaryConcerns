@@ -11,9 +11,14 @@ The general election polls (for example [Pennsylvania](https://projects.fivethir
 ![equation](https://latex.codecogs.com/gif.latex?\bm{y_j}&space;\sim&space;Multinomial(n_j,&space;\bm{p_j}))
 
 ![equation](https://latex.codecogs.com/gif.latex?n_j) is the known total number of poll respondents.
-Assuming a Dirichlet prior on ![equation](https://latex.codecogs.com/gif.latex?\bm{p_j}) gives,
+Assuming a Dirichlet prior on ![equation](https://latex.codecogs.com/gif.latex?\bm{p_j}) 
+gives conjugacy and produces the following posterior,
 
 ![equation](https://latex.codecogs.com/gif.latex?\bm{p_j}&space;\sim&space;Dir(\bm{\alpha}).)
 
-One may specify a particular prior through the choice of $\bm{\alpha}$ components relative to each other; prior strength is then selected by the absolute scale of the components of $\bm{\alpha}$. At this time I am selecting the laplace prior of $\bm{\alpha}=\bm{1}$.
+One may specify a particular prior through the choice of ![equation](https://latex.codecogs.com/gif.latex?\bm{\alpha}) 
+components relative to each other; prior strength is then selected by the 
+absolute scale of the components of ![equation](https://latex.codecogs.com/gif.latex?\bm{p_j}). 
+At this time I am selecting the laplace prior over the ![equation](https://latex.codecogs.com/gif.latex?\bm{\alpha}).
+
 
