@@ -61,7 +61,7 @@ Candidate electoral boxplots
 
 ![header image](https://raw.github.com/KrisKasprzak/ILI9341_t3_controls/master/Equalizer.jpg)
 
-![header image](https://raw.github.com/gasduster99/primaryConcerns/master/collegeVotes.pdf)
+![header image](https://raw.github.com/gasduster99/primaryConcerns/master/collegeVotes.jpg)
 
 ![image](./collegeVotes.pdf?raw=true "Title"))
 
