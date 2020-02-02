@@ -78,7 +78,10 @@ will include it.
 ![header image](https://raw.github.com/gasduster99/primaryConcerns/master/collegeVotes.jpg)
 
 Finally to boil the simulation down to a simple measure of success, I compute 
-the probability that each candidate will defeat Trump.
+the probability that each candidate will defeat Trump. I Trump's aggregate 
+distribution of electoral college votes from that of the democrat. The 
+probability of the democrat winning is now the number of positive difference divided by the total numner of simulation runs 
+(in this cas one million).
 
 
 
