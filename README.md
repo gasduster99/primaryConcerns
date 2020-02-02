@@ -58,7 +58,7 @@ For predicting the number of votes in the general election the multinomial
 size n* is given by the number of votes cast in a given state in 2016 
 as sourced from [http://www.electproject.org/2016g](http://www.electproject.org/2016g). 
 This produces a slight scaling of variability between states, but (based on preliminary 
-sensitivity analysis) misspecifying n here does not dramatically change the results.
+sensitivity analysis) misspecifying n* here does not dramatically change the results.
 
 Sampling one million y* voting outcomes and assigning the appropriate number of electoral college votes 
 to the winner in each case produces a distribution of electoral college votes in each state, for each democratic 
