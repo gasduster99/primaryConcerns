@@ -9,26 +9,29 @@ runoff style polls, for assessing the general election, would position
 each democratic candidate when you further consider the somewhat 
 unintuitve behavior of the electoral college.  
 
-The general election polls (for example 
+The general election polls on FiveThirtyEight (for example 
 [Pennsylvania](https://projects.fivethirtyeight.com/polls/president-general/pennsylvania/)) 
 take the form of trinomial outcomes for the number of polled registered voters 
-for a democratic candidate matched-up against Trump, as well as some other (
-third party or write-in) candiate in each state.
+for a democratic candidate matched-up against Trump, as well as some other 
+(third party or write-in) candiate in each state.
 
 ![equation](https://latex.codecogs.com/gif.latex?\bm{y}&space;=&space;[Democrat,&space;Trump,&space;Other])
 
 ![equation](https://latex.codecogs.com/gif.latex?\bm{y}&space;\sim&space;Multinomial(n,&space;\bm{p}))
 
-![equation](https://latex.codecogs.com/gif.latex?n) is the known total number of poll respondents.
-Assuming a Dirichlet prior on ![equation](https://latex.codecogs.com/gif.latex?\bm{p}) 
-gives conjugacy and produces the following posterior,
+![equation](https://latex.codecogs.com/gif.latex?n) is the known total number 
+of poll respondents.  Assuming a Dirichlet prior on 
+![equation](https://latex.codecogs.com/gif.latex?\bm{p}) gives conjugacy and 
+produces the following posterior density on the probability of each candidate 
+getting a vote,
 
 ![equation](https://latex.codecogs.com/gif.latex?\bm{p}|\bm{y}&space;\sim&space;Dir(\bm{y}+\bm{\alpha}).)
 
-One may specify a particular prior through the choice of ![equation](https://latex.codecogs.com/gif.latex?\bm{\alpha}) 
-components relative to each other; prior strength is then selected by the 
+One may specify prior information through the choice of the components of 
+![equation](https://latex.codecogs.com/gif.latex?\bm{\alpha}) 
+relative to each other; prior uncertainty is then selected by the 
 absolute scale of the components of ![equation](https://latex.codecogs.com/gif.latex?\bm{\alpha}). 
-At this time I am selecting the laplace prior over ![equation](https://latex.codecogs.com/gif.latex?\bm{p}) by 
+At this time I am selecting a flat prior over ![equation](https://latex.codecogs.com/gif.latex?\bm{p}) by 
 selecting all ![equation](https://latex.codecogs.com/gif.latex?\bm{\alpha}=1).
 
 # Simulation
