@@ -1,12 +1,20 @@
 # The Premise
 
-FiveThirtyEight recently added a tool for viewing summaries of many of the polls that they use in models to better understand the upcoming 2020 election.
-It occurs to me that any vote worth making in the primary should be cast in order to produce a viable candidate among the swing states in the general election.
-In pursuit of that end I wrote the code here to consider how the hypothetical runoff style polls, for assessing the general election, would position each democratic candidate when you further consider the somewhat unintuitve behavior of the electoral college.  
+FiveThirtyEight recently added a tool for viewing summaries of many of the 
+polls that they use in modeling the upcoming 2020 election. It occurs to me 
+that any vote worth making in the primary should be cast in order to produce a 
+viable candidate in the general election (in particular among the swing states). 
+In pursuit of that end I wrote the code here to consider how the hypothetical 
+runoff style polls, for assessing the general election, would position 
+each democratic candidate when you further consider the somewhat 
+unintuitve behavior of the electoral college.  
 
-The general election polls (for example [Pennsylvania](https://projects.fivethirtyeight.com/polls/president-general/pennsylvania/)) take the form of trinomial outcomes for the number of polled registered voters for a democratic candidate matched-up against Trump, as well as some other (third party or write-in) candiate in each state.
+The general election polls (for example 
+[Pennsylvania](https://projects.fivethirtyeight.com/polls/president-general/pennsylvania/)) 
+take the form of trinomial outcomes for the number of polled registered voters 
+for a democratic candidate matched-up against Trump, as well as some other (
+third party or write-in) candiate in each state.
 
-<!--https://www.codecogs.com/latex/eqneditor.php-->
 ![equation](https://latex.codecogs.com/gif.latex?\bm{y}&space;=&space;[Democrat,&space;Trump,&space;Other])
 
 ![equation](https://latex.codecogs.com/gif.latex?\bm{y}&space;\sim&space;Multinomial(n,&space;\bm{p}))
@@ -58,6 +66,8 @@ deserve to be considered, I welcome you to provide me a convincing argument as t
 find the data I will include it.
 
 ![header image](https://raw.github.com/gasduster99/primaryConcerns/master/collegeVotes.jpg)
+
+
 
 Describe probability measure
 
