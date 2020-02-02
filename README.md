@@ -52,10 +52,10 @@ number of votes each state will produce for each hypothetical general election m
 The posterior predictive distribution for the number of votes each candidate will get 
 is given by doing the following Monte Carlo integral,
 
-![equation](https://latex.codecogs.com/gif.latex?p(y^*|y)=\int&space;Multinomial(y^*|n,\bm{p})Dir(\bm{p}|\bm{y}&plus;\bm{\alpha})d\bm{p}.)
+![equation](https://latex.codecogs.com/gif.latex?p(y^*|y)=\int&space;Multinomial(y^*|n^*,\bm{p})Dir(\bm{p}|\bm{y}&plus;\bm{\alpha})d\bm{p}.)
 
 For predicting the number of votes in the general election the multinomial 
-size n is given by the number of votes cast in the given state in 2016 
+size n* is given by the number of votes cast in the given state in 2016 
 as sourced from [http://www.electproject.org/2016g](http://www.electproject.org/2016g). 
 This produces a slight scaling of variability between states, but (based on preliminary 
 sensitivity analysis) misspecifying n here does not dramatically change the results.
