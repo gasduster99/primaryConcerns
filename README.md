@@ -57,15 +57,7 @@ that achieve at least a B+ pollster rating from FivethirtyEight. If you can thin
 deserve to be considered, I welcome you to provide me a convincing argument as to why. If I am convinced and I can 
 find the data I will include it.
 
-Candidate electoral boxplots
-
-![header image](https://raw.github.com/KrisKasprzak/ILI9341_t3_controls/master/Equalizer.jpg)
-
 ![header image](https://raw.github.com/gasduster99/primaryConcerns/master/collegeVotes.jpg)
-
-![image](./collegeVotes.pdf?raw=true "Title"))
-
-![image](https://github.com/gasduster99/primaryConcerns/blob/master/collegeVotes.pdf?raw=true)
 
 Describe probability measure
 

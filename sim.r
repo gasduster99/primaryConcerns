@@ -145,7 +145,7 @@ l = list('a'=names(probWins), 'b'=rep(':', length(probWins)), 'c'=sprintf('%s  '
 l = do.call(c, l)[order(sequence(sapply(l, length)))]
 
 #
-pdf('collegeVotes.pdf', width=11)
+jpeg('collegeVotes.jpg', width=800)
 boxplot(box,
         col     = c('red', 'blue', 'grey'),
         outline = F,
