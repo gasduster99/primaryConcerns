@@ -19,7 +19,7 @@ for a democratic candidate matched-up against Trump, as well as some other
 
 ![equation](https://latex.codecogs.com/gif.latex?\bm{y}&space;=&space;[Democrat,&space;Trump,&space;Other])
 
-![equation](https://latex.codecogs.com/gif.latex?\bm{y}&space;\sim&space;Multinomial(n,&space;\bm{p}))
+![equation](https://latex.codecogs.com/gif.latex?\bm{y}|n,\bm{p}&space;\sim&space;Multinomial(n,&space;\bm{p}))
 
 ![equation](https://latex.codecogs.com/gif.latex?n) is the known total number 
 of poll respondents.  Assuming a Dirichlet prior on 
@@ -38,16 +38,16 @@ selecting all ![equation](https://latex.codecogs.com/gif.latex?\bm{\alpha}=1).
 
 # Simulation
 
-Above model suggests a mechanism for directly sampling voting outcomes for the 
+The above model suggests a mechanism for directly sampling voting outcomes for the 
 purpose of simulating general election outcomes. As we all know, the person 
 with the highest proportion of votes does not necessarily win the 
-election, each state has some number of electoral college votes which are 
-generally speaking winner-take-all for the candidate who wins the highest 
+election, each state has some number of electoral college votes which are, 
+generally speaking, winner-take-all for the candidate who wins the highest 
 number of votes in that state.  
 
 ![image](https://upload.wikimedia.org/wikipedia/commons/4/49/ElectoralCollege2020.svg)
 
-The above model based perspective gives a straight forward prediction for the 
+This model based perspective gives a straight forward prediction for the 
 number of votes each state will produce for each hypothetical general election matchup.
 The posterior predictive distribution for the number of votes each candidate will get 
 is given by doing the following Monte Carlo integral,
@@ -57,8 +57,9 @@ is given by doing the following Monte Carlo integral,
 For predicting the number of votes in the general election the multinomial 
 size n* is given by the number of votes cast in a given state in 2016 
 as sourced from [http://www.electproject.org/2016g](http://www.electproject.org/2016g). 
-This produces a slight scaling of variability between states, but (based on preliminary 
-sensitivity analysis) misspecifying n* here does not dramatically change the results.
+This scales the variability between states, but (based on preliminary 
+sensitivity analysis) realistically misspecifying n* here does not dramatically 
+change the results.
 
 Sampling one million y* voting outcomes and assigning the appropriate number of electoral college votes 
 to the winner in each case produces a distribution of electoral college votes in each state, for each democratic 
