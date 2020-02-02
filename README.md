@@ -60,7 +60,7 @@ as sourced from [http://www.electproject.org/2016g](http://www.electproject.org/
 This produces a slight scaling of variability between states, but (based on preliminary 
 sensitivity analysis) misspecifying n here does not dramatically change the results.
 
-Sampling a million y* voting outcomes and assigning the appropriate number of electoral college votes 
+Sampling one million y* voting outcomes and assigning the appropriate number of electoral college votes 
 to the winner in each case produces a distribution of electoral college votes in each state, for each democratic 
 candidate against Trump. Summing these distributions over the relevant states gives a prediction for the number 
 of electoral college votes each candidate will get from those states. 
@@ -78,12 +78,12 @@ will include it.
 ![header image](https://raw.github.com/gasduster99/primaryConcerns/master/collegeVotes.jpg)
 
 Finally to boil the simulation down to a simple measure of success, I compute 
-the probability that each candidate will defeat Trump. I subtract Trump's 
-aggregate distribution of electoral college votes from that of the democrat. 
-The probability of the democrat winning is now the number of positive 
-differences divided by the total number of simulation runs (in this case one 
-million).
-
+the probability that each candidate will get more electoral college votes than 
+Trump in the swing states. I subtract Trump's aggregate distribution of 
+electoral college votes from that of the democrat. The probability of getting 
+more electoral college votes than Trump in these states is now the number 
+of positive differences divided by the total number of simulation runs (in 
+this case one million).  
 
 
 
