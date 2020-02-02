@@ -16,6 +16,7 @@ ns[['Nevada']] = 1505
 ns[['NewHampshire']] = 2223
 ns[['Virginia']] = 625
 ns[['Wisconsin']] = 800
+ns[['NorthCarolina']] = 1504	
 
 #poling probabilities (candiate, trump, other)
 p = list()
@@ -64,6 +65,12 @@ p[['Wisconsin']][['buttigieg']] = c(0.44,0.46,0.1)
 p[['Wisconsin']][['biden']]     = c(0.49,0.45,0.06)
 p[['Wisconsin']][['warren']]    = c(0.45,0.48,0.07)
 p[['Wisconsin']][['sanders']]   = c(0.47,0.46,0.07)
+#Nov 14 2019 A-
+p[['NorthCarolina']] = list()
+p[['NorthCarolina']][['buttigieg']] = c(0.39,0.43,0.18)
+p[['NorthCarolina']][['biden']]     = c(0.45,0.43,0.12)
+p[['NorthCarolina']][['warren']]    = c(0.43,0.44,0.13)
+p[['NorthCarolina']][['sanders']]   = c(0.45,0.44,0.11)
 
 
 #number of electoral college votes in each state
@@ -94,9 +101,18 @@ size[['Pennsylvania']] = 6165478
 size[['Virginia']] = 3984631
 size[['Wisconsin']] = 2976150
 
-#
-peeps = c("buttigieg", "biden", "warren", "sanders") #names(p[['Nevada']])
-states = c("Iowa", "Florida", "Michigan", "Nevada", "NewHampshire", "Virginia", "Wisconsin") #names(votes)[c(1:3,6)] #NOTE: just here to make the code work
+#define to who and were I have full data to run simulation 
+peeps = c("buttigieg", "biden", "warren", "sanders")
+states = c(
+	"Iowa", 
+	"Florida", 
+	"Michigan", 
+	"Nevada", 
+	"NewHampshire", 
+	"Virginia", 
+	"Wisconsin", 
+	"NorthCarolina"
+)
 
 #
 #SAMPLE
@@ -114,7 +130,6 @@ cast[['oCast']] = matrix(0, nrow=M, ncol=length(peeps))
 colnames(cast[['dCast']]) = peeps
 for(state in states){
 	for(peep in peeps){
-		#nome = c(peep, 'trump', 'other')
 		post = rdirichlet(M, ns[[state]]*p[[state]][[peep]]+1)
 		who = apply(post, 1, function(x){
 			pred = rmultinom(1, size[[state]], x)
@@ -139,8 +154,9 @@ box = do.call(cbind, cast)[,order(sequence(sapply(cast, ncol)))]
 #OUTPUT
 #
 
-#
+#compute probability of winning
 probWins = colSums((cast[['dCast']]-cast[['tCast']])>0)/M
+#prep probability vector for plotting
 l = list('a'=names(probWins), 'b'=rep(':', length(probWins)), 'c'=sprintf('%s  ', round(probWins, 3)))
 l = do.call(c, l)[order(sequence(sapply(l, length)))]
 

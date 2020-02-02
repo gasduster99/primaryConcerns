@@ -61,21 +61,25 @@ This produces a slight scaling of variability between states, but (based on prel
 sensativity analysis) misspecifying n here does not dramatically change the results.
 
 Sampling a million y* voting outcomes and assigning the appropriate number of electoral college votes 
-to the winner in each case produces a distribution of electoral college votes in each state for each democratic 
+to the winner in each case produces a distribution of electoral college votes in each state, for each democratic 
 candidate against Trump. Summing these distributions over the relavent states gives a prediction for the number 
-of electoral college votes each candidate will get from those states. In this simulation I have limited the
-prediction to Iowa, Florida, Michigan, Nevada, New Hampshire, Virginia, and Wisconsin. Although I would like to 
-add Minnesota, Ohio, Nevada, North Carolina, and Pennsylvania, pending decent polls from those states. I have 
-tried to limit poll inclusion to polls present on FivethirtyEight appearing within the last two-three months and 
-that achieve at least a B+ pollster rating from FivethirtyEight. If you can think of any other states that 
-deserve to be considered, I welcome you to provide me a convincing argument as to why. If I am convinced and I can 
-find the data I will include it.
+of electoral college votes each candidate will get from those states. 
+
+In this simulation I have limited the prediction to Iowa, Florida, Michigan, 
+Nevada, New Hampshire, Virginia, Wisconsin, and North Carolina. Although I 
+would like to add Minnesota, Ohio, and Pennsylvania, pending decent polls 
+from those states. I have tried to limit poll inclusion to polls present 
+on FivethirtyEight appearing within the last two-three months and that achieve 
+at least a B+ pollster rating from FivethirtyEight. If you can think of any 
+other states that deserve to be considered, I welcome you to provide me a 
+convincing argument as to why. If I am convinced and I can find the data I 
+will include it.  
 
 ![header image](https://raw.github.com/gasduster99/primaryConcerns/master/collegeVotes.jpg)
 
+Finally to boil the simulation down to a simple measure of success, I compute 
+the probability that each candidate will defeat Trump.
 
 
-Describe probability measure
 
-Display probability
 
