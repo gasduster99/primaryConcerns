@@ -59,6 +59,10 @@ find the data I will include it.
 
 Candidate electoral boxplots
 
+![header image](https://raw.github.com/KrisKasprzak/ILI9341_t3_controls/master/Equalizer.jpg)
+
+![header image](https://raw.github.com/gasduster99/primaryConcerns/master/collegeVotes.pdf)
+
 ![image](./collegeVotes.pdf?raw=true "Title"))
 
 ![image](https://github.com/gasduster99/primaryConcerns/blob/master/collegeVotes.pdf?raw=true)
