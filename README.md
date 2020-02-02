@@ -7,7 +7,7 @@ viable candidate in the general election (in particular among the swing states).
 In pursuit of that end I wrote the code here to consider how the hypothetical 
 runoff style polls, for assessing the general election, would position 
 each democratic candidate when you further consider the somewhat 
-unintuitve behavior of the electoral college.  
+unintuitive behavior of the electoral college.  
 
 # Model
 
@@ -15,7 +15,7 @@ The general election polls on FiveThirtyEight (for example
 [Pennsylvania](https://projects.fivethirtyeight.com/polls/president-general/pennsylvania/)) 
 take the form of trinomial outcomes for the number of polled registered voters 
 for a democratic candidate matched-up against Trump, as well as some other 
-(third party or write-in) candiate in each state.
+(third party or write-in) candidate in each state.
 
 ![equation](https://latex.codecogs.com/gif.latex?\bm{y}&space;=&space;[Democrat,&space;Trump,&space;Other])
 
@@ -40,7 +40,7 @@ selecting all ![equation](https://latex.codecogs.com/gif.latex?\bm{\alpha}=1).
 
 Above model suggests a mechanism for directly sampling voting outcomes for the 
 purpose of simulating general election outcomes. As we all know, the person 
-with the highest proportion of votes does not neccessarily win the 
+with the highest proportion of votes does not necessarily win the 
 election, each state has some number of electoral college votes which are 
 generally speaking winner-take-all for the candidate who wins the highest 
 number of votes in that state.  
@@ -58,11 +58,11 @@ For predicting the number of votes in the general election the multinomial
 size n is given by the number of votes cast in the given state in 2016 
 as sourced from [http://www.electproject.org/2016g](http://www.electproject.org/2016g). 
 This produces a slight scaling of variability between states, but (based on preliminary 
-sensativity analysis) misspecifying n here does not dramatically change the results.
+sensitivity analysis) misspecifying n here does not dramatically change the results.
 
 Sampling a million y* voting outcomes and assigning the appropriate number of electoral college votes 
 to the winner in each case produces a distribution of electoral college votes in each state, for each democratic 
-candidate against Trump. Summing these distributions over the relavent states gives a prediction for the number 
+candidate against Trump. Summing these distributions over the relevant states gives a prediction for the number 
 of electoral college votes each candidate will get from those states. 
 
 In this simulation I have limited the prediction to Iowa, Florida, Michigan, 
@@ -78,10 +78,11 @@ will include it.
 ![header image](https://raw.github.com/gasduster99/primaryConcerns/master/collegeVotes.jpg)
 
 Finally to boil the simulation down to a simple measure of success, I compute 
-the probability that each candidate will defeat Trump. I Trump's aggregate 
-distribution of electoral college votes from that of the democrat. The 
-probability of the democrat winning is now the number of positive difference divided by the total numner of simulation runs 
-(in this cas one million).
+the probability that each candidate will defeat Trump. I subtract Trump's 
+aggregate distribution of electoral college votes from that of the democrat. 
+The probability of the democrat winning is now the number of positive 
+differences divided by the total number of simulation runs (in this case one 
+million).
 
 
 
