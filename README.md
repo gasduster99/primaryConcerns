@@ -4,7 +4,7 @@ FiveThirtyEight recently added a tool for viewing summaries of many of the
 polls that they use in modeling the upcoming 2020 election. It occurs to me 
 that any vote worth making in the primary should be cast in order to produce a 
 viable candidate in the general election (in particular among the swing states). 
-In pursuit of that end I wrote the code here to consider how the hypothetical 
+In pursuit of that end, I wrote the code here to consider how the hypothetical 
 runoff style polls, for assessing the general election, would position 
 each democratic candidate when you further consider the somewhat 
 unintuitive behavior of the electoral college.  
@@ -14,7 +14,7 @@ unintuitive behavior of the electoral college.
 The general election polls on FiveThirtyEight (for example 
 [Pennsylvania](https://projects.fivethirtyeight.com/polls/president-general/pennsylvania/)) 
 take the form of trinomial outcomes for the number of polled registered voters 
-for a democratic candidate matched-up against Trump, as well as some other 
+for each democratic candidate matched-up against Trump, as well as some other 
 (third party or write-in) candidate in each state.
 
 ![equation](https://latex.codecogs.com/gif.latex?\bm{y}&space;=&space;[Democrat,&space;Trump,&space;Other])
