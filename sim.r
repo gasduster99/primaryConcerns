@@ -180,8 +180,13 @@ bCast = cast
 bCast[['dCast']] = bCast[['dCast']]+dBump
 bCast[['tCast']] = bCast[['tCast']]+tBump
 
+#
+inn  = dBump+tBump+totalVotes
+miss = 538-inn
+effThresh = ceiling( (538-miss)/2 )
+
 #compute probability of winning
-bProbWins = colSums(bCast[['dCast']]>270)/M
+bProbWins = colSums(bCast[['dCast']]>effThresh)/M
 #prep probability vector for plotting
 bl = list('a'=names(bProbWins), 'b'=rep(':', length(bProbWins)), 'c'=sprintf('%s  ', round(bProbWins, 3)))
 bl = do.call(c, bl)[order(sequence(sapply(bl, length)))]
@@ -196,10 +201,17 @@ boxplot(bbox,
         #names   = names,
         at      = seq(1, length(peeps)*4)[-seq(4, length(peeps)*4, 4)],
         ylab    = "Electoral College Votes",
-        main    = "Electoral College Votes From AZ, MN, OH, PA, NE#2, and ME#2 Left Out" #sprintf("Pr(eVotes>270) = %s", paste(bl, collapse=c("")))
+        main    = sprintf("*** Electoral College Votes From AZ, MN, OH, PA, NE#2, and ME#2 Left Out ***\nPr(eVotes>%s) = %s", effThresh, paste(bl, collapse=c("")))
 )
 abline(h=270, lwd=3)
-legend('right', legend=c('Trump', 'Democrat', 'Other', '270 eVotes'), fill=c('red', 'blue', 'grey', NA), lwd=c(NA, NA, NA, 3), border=c(rep('black', 3), NA), x.intersp=-c(1,1,1,-0.5))
+abline(h=effThresh, lwd=2, lty=2)
+legend('right', legend=c('Trump', 'Democrat', 'Other', '270 eVotes', sprintf('%s eVotes', effThresh)), 
+	fill=c('red', 'blue', 'grey', NA, NA), 
+	lwd=c(NA, NA, NA, 3, 2), 
+	lty=c(NA, NA, NA, 1, 2),
+	border=c(rep('black', 3), NA, NA), 
+	x.intersp=-c(1, 1, 1, -0.5, -0.5)
+)
 dev.off()
 
 
