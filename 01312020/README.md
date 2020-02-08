@@ -86,8 +86,3 @@ more electoral college votes than Trump in these states is now the number
 of positive differences divided by the total number of simulation runs (in 
 this case one million).  
 
-![image](https://www.270towin.com/maps/63XyE.png)
-
-![image](https://raw.github.com/gasduster99/primaryConcerns/master/collegeVotes.jpg)
-
-
