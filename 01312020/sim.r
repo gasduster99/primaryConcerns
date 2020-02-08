@@ -172,36 +172,4 @@ boxplot(box,
 legend('topright', legend=c('Trump', 'Democrat', 'Other'), fill=c('red', 'blue', 'grey'))
 dev.off()
 
-#
-dBump = 199
-tBump = 179
-bCast = cast
-#
-bCast[['dCast']] = bCast[['dCast']]+dBump
-bCast[['tCast']] = bCast[['tCast']]+tBump
-
-#compute probability of winning
-bProbWins = colSums(cast[['dCast']]>270)/M
-#prep probability vector for plotting
-bl = list('a'=names(bProbWins), 'b'=rep(':', length(bProbWins)), 'c'=sprintf('%s  ', round(bProbWins, 3)))
-bl = do.call(c, bl)[order(sequence(sapply(bl, length)))]
-
-#
-jpeg('collegeVotes.jpg', width=800)
-bbox = do.call(cbind, bCast)[,order(sequence(sapply(bCast, ncol)))]
-boxplot(bbox,
-        col     = c('red', 'blue', 'grey'),
-        outline = F,
-	ylim    = c(0, 538),
-        #names   = names,
-        at      = seq(1, length(peeps)*4)[-seq(4, length(peeps)*4, 4)],
-        ylab    = "Electoral College Votes",
-        main    = sprintf("Pr(eVotes>270) = %s", paste(bl, collapse=c("")))
-)
-abline(h=270, lwd=3)
-legend('topright', legend=c('Trump', 'Democrat', 'Other'), fill=c('red', 'blue', 'grey'))
-dev.off()
-
-
-
 
