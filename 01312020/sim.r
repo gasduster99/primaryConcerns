@@ -181,7 +181,7 @@ bCast[['dCast']] = bCast[['dCast']]+dBump
 bCast[['tCast']] = bCast[['tCast']]+tBump
 
 #compute probability of winning
-bProbWins = colSums(bCast[['dCast']]>270)/M
+bProbWins = colSums(cast[['dCast']]>270)/M
 #prep probability vector for plotting
 bl = list('a'=names(bProbWins), 'b'=rep(':', length(bProbWins)), 'c'=sprintf('%s  ', round(bProbWins, 3)))
 bl = do.call(c, bl)[order(sequence(sapply(bl, length)))]
@@ -192,14 +192,14 @@ bbox = do.call(cbind, bCast)[,order(sequence(sapply(bCast, ncol)))]
 boxplot(bbox,
         col     = c('red', 'blue', 'grey'),
         outline = F,
-	ylim    = c(0, max(bbox)),
+	ylim    = c(0, 538),
         #names   = names,
         at      = seq(1, length(peeps)*4)[-seq(4, length(peeps)*4, 4)],
         ylab    = "Electoral College Votes",
-        main    = "Electoral College Votes From AZ, MN, OH, PA, NE#2, and ME#2 Left Out" #sprintf("Pr(eVotes>270) = %s", paste(bl, collapse=c("")))
+        main    = sprintf("Pr(eVotes>270) = %s", paste(bl, collapse=c("")))
 )
 abline(h=270, lwd=3)
-legend('bottomleft', legend=c('Trump', 'Democrat', 'Other'), fill=c('red', 'blue', 'grey'))
+legend('topright', legend=c('Trump', 'Democrat', 'Other'), fill=c('red', 'blue', 'grey'))
 dev.off()
 
 
