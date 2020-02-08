@@ -68,26 +68,48 @@ of electoral college votes each candidate will get from those states.
 
 In this simulation I have limited the prediction to Iowa, Florida, Michigan, 
 Nevada, New Hampshire, Virginia, Wisconsin, and North Carolina. Although I 
-would like to add Minnesota, Ohio, and Pennsylvania, pending decent polls 
+would like to add Arizona, Minnesota, Ohio, and Pennsylvania, pending decent polls 
 from those states. I have tried to limit poll inclusion to polls present 
-on FivethirtyEight appearing within the last two-three months and that achieve 
-at least a B+ pollster rating from FivethirtyEight. If you can think of any 
+on FiveThirtyEight appearing within the last two-three months and that achieve 
+at least a B+ pollster rating from FiveThirtyEight. If you can think of any 
 other states that deserve to be considered, I welcome you to provide me a 
 convincing argument as to why. If I am convinced and I can find the data I 
 will include it.  
 
-![image](https://raw.github.com/gasduster99/primaryConcerns/master/swingVotes.jpg)
+# A Measure of Success
 
-Finally to boil the simulation down to a simple measure of success, I compute 
+To boil the simulation down to a simple measure of success, I compute 
 the probability that each candidate will get more electoral college votes than 
 Trump in the swing states. I subtract Trump's aggregate distribution of 
 electoral college votes from that of the democrat. The probability of getting 
 more electoral college votes than Trump in these states is now the number 
 of positive differences divided by the total number of simulation runs (in 
-this case one million).  
+this case one million).
+
+![image](https://raw.github.com/gasduster99/primaryConcerns/master/swingVotes.jpg)
+
+# A Lazy Election Forecast  
+
+Assuming that all other states, besides swing states, vote as expected I produce
+a lazy general election forecast in the case of each democratic candidate against 
+Trump. I tabulated my expected outcome among other states with [270towin](https://www.270towin.com/maps/8xlYX).
 
 ![image](https://www.270towin.com/maps/63XyE.png)
 
+As seen above, my expectation gives democrats 199 and Trump 179 electoral college 
+votes right out of the gate. This produces a 20 electoral college vote gap. Shifting 
+the measure of success distributions by these expectations relatively produces the 
+following forecast of the general election. 
+
 ![image](https://raw.github.com/gasduster99/primaryConcerns/master/collegeVotes.jpg)
+
+Again I would like to add Arizona, Minnesota, Ohio, and Pennsylvania, pending decent 
+polls in these states. Since I do not have such polls, I opted to leave them out
+of the forecast entirely. Further I have left out the 2nd Districts of Nebraska and 
+Maine. In total, this analysis leave 61 electoral college votes unaccounted for. I 
+figure it is less misleading to obviously exclude them from the analysis that to make 
+a poorly informed guess about their outcome.  
+
+
 
 
