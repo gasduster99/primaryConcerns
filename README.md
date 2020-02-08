@@ -92,10 +92,9 @@ this case one million).
 
 # A Lazy Election Forecast *(kinda)*
 
-Assuming that all other states, besides swing states, vote as expected (and 
-the same for each democrat) I produce a lazy general election forecast for each 
-democratic candidate against Trump. I tabulated my expected outcome among the 
-other states with [270towin](https://www.270towin.com/maps/8xlYX).  
+Assuming that non-swing states vote as expected (and the same for each democrat) 
+I produce a lazy general election forecast for each democratic candidate 
+against Trump. I tabulated my expected outcome among non-swing states with [270towin](https://www.270towin.com/maps/8xlYX).  
 
 ![image](https://www.270towin.com/maps/63XyE.png)
 
