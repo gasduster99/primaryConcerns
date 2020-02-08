@@ -199,7 +199,7 @@ boxplot(bbox,
         main    = "Electoral College Votes From AZ, MN, OH, PA, NE#2, and ME#2 Left Out" #sprintf("Pr(eVotes>270) = %s", paste(bl, collapse=c("")))
 )
 abline(h=270, lwd=3)
-legend('bottomleft', legend=c('Trump', 'Democrat', 'Other'), fill=c('red', 'blue', 'grey'))
+legend('right', legend=c('Trump', 'Democrat', 'Other', '270 eVotes'), fill=c('red', 'blue', 'grey', NA), lwd=c(NA, NA, NA, 3), border=c(rep('black', 3), NA), x.intersp=-c(1,1,1,-0.5))
 dev.off()
 
 
