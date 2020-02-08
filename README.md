@@ -61,10 +61,12 @@ This scales the variability between states, but (based on preliminary
 sensitivity analysis) realistically misspecifying n* here does not dramatically 
 change the results.
 
-Sampling one million y* voting outcomes and assigning the appropriate number of electoral college votes 
-to the winner in each case produces a distribution of electoral college votes in each state, for each democratic 
-candidate against Trump. Summing these distributions over the relevant states gives a prediction for the number 
-of electoral college votes each candidate will get from those states. 
+Sampling one million y* voting outcomes and assigning the appropriate number 
+of electoral college votes to the winner in each case produces a distribution 
+of electoral college votes in each state, for each democratic candidate 
+against Trump. Summing these distributions over the relevant states gives a 
+prediction for the number of electoral college votes each candidate will get 
+from those states.  
 
 In this simulation I have limited the prediction to Iowa, Florida, Michigan, 
 Nevada, New Hampshire, Virginia, Wisconsin, and North Carolina. Although I 
@@ -88,25 +90,26 @@ this case one million).
 
 ![image](https://raw.github.com/gasduster99/primaryConcerns/master/swingVotes.jpg)
 
-# A Lazy Election Forecast  
+# A Lazy Election Forecast *(kinda)*
 
-Assuming that all other states, besides swing states, vote as expected I produce
-a lazy general election forecast in the case of each democratic candidate against 
-Trump. I tabulated my expected outcome among other states with [270towin](https://www.270towin.com/maps/8xlYX).
+Assuming that all other states, besides swing states, vote as expected (and 
+the same for each democrat) I produce a lazy general election forecast in the 
+case of each democratic candidate against Trump. I tabulated my expected 
+outcome among the other states with [270towin](https://www.270towin.com/maps/8xlYX).  
 
 ![image](https://www.270towin.com/maps/63XyE.png)
 
-As seen above, my expectation gives democrats 199 and Trump 179 electoral college 
-votes right out of the gate. This produces a 20 electoral college vote gap. Shifting 
-the measure of success distributions by these expectations relatively produces the 
-following forecast of the general election. 
+As seen above, my expectation gives democrats 199 and Trump 179 electoral 
+college votes right out of the gate. This produces a 20 electoral college vote 
+gap. Shifting the previously computed distributions by these expectations 
+produces the following forecast of the general election.  
 
 ![image](https://raw.github.com/gasduster99/primaryConcerns/master/collegeVotes.jpg)
 
 Again I would like to add Arizona, Minnesota, Ohio, and Pennsylvania, pending decent 
 polls in these states. Since I do not have such polls, I opted to leave them out
 of the forecast entirely. Further I have left out the 2nd Districts of Nebraska and 
-Maine. In total, this analysis leave 61 electoral college votes unaccounted for. I 
+Maine. In total, this analysis leaves 61 electoral college votes unaccounted for. I 
 figure it is less misleading to obviously exclude them from the analysis that to make 
 a poorly informed guess about their outcome.  
 
