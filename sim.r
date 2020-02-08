@@ -186,7 +186,7 @@ miss = 538-inn
 effThresh = ceiling( (538-miss)/2 )
 
 #compute probability of winning
-bProbWins = colSums(bCast[['dCast']]>effThresh)/M
+bProbWins = colSums(bCast[['dCast']]>=effThresh)/M
 #prep probability vector for plotting
 bl = list('a'=names(bProbWins), 'b'=rep(':', length(bProbWins)), 'c'=sprintf('%s  ', round(bProbWins, 3)))
 bl = do.call(c, bl)[order(sequence(sapply(bl, length)))]
@@ -201,7 +201,7 @@ boxplot(bbox,
         #names   = names,
         at      = seq(1, length(peeps)*4)[-seq(4, length(peeps)*4, 4)],
         ylab    = "Electoral College Votes",
-        main    = sprintf("*** Electoral College Votes From AZ, MN, OH, PA, NE#2, and ME#2 Left Out ***\nPr(eVotes>%s) = %s", effThresh, paste(bl, collapse=c("")))
+        main    = sprintf("*** Electoral College Votes From AZ, MN, OH, PA, NE#2, and ME#2 Left Out ***\nPr(eVotes\u2265%s) = %s", effThresh, paste(bl, collapse=c("")))
 )
 abline(h=270, lwd=3)
 abline(h=effThresh, lwd=2, lty=2)
