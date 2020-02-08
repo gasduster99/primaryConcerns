@@ -99,11 +99,12 @@ against Trump. I tabulated my expected outcome among non-swing states with [270t
 ![image](https://www.270towin.com/maps/63XyE.png)
 
 As seen above, my expectation gives democrats 199 and Trump 179 electoral 
-college votes right out of the gate. This produces a 20 electoral college vote 
-gap. Shifting the previously computed distributions by these expectations 
-produces the following forecast of the general election. Each distribution is
-compared against the 270 electoral college vote line (the minimum number of electoral 
-college votes required to win the election) to judge the election outcome. 
+college votes right out of the gate. This produces a 20 vote electoral college 
+head start for the democrats. Shifting the previously computed distributions 
+by these expectations produces the following forecast of the general election. 
+Each distribution is compared against the 270 electoral college vote line (the 
+minimum number of electoral college votes required to win the election) to 
+judge the election outcome.  
 
 ![image](https://raw.github.com/gasduster99/primaryConcerns/master/collegeVotes.jpg)
 
