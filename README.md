@@ -81,17 +81,17 @@ sample sizes and I compute a weighted averaging of their proportions based on
 their relative sample sizes.  
 
 Currently Pennsylvania and Arizona do not have recent, and high quality, polls. 
-Furthermore, the polls that do exists for these states exclude Buttigieg form 
+Furthermore, the polls that do exists for these states exclude Buttigieg from 
 polling. Until new polls exist in these states I am forced to loosen the standard
 for poll inclusion. For these states I extend poll inclusion to polls that are 
 up to four months old and lower the pollster standard to at least a B- rating. 
 I fill in Buttigeig's poll numbers, in missing cases, by filling in his 
 average among all other swing states, with a sample size of one.  This has the 
-effect of increasing uncertanty about Buttigieg without swaying his mean 
+effect of increasing uncertainty about Buttigieg without swaying his mean 
 performance. 
 <!--
 I also extend this lowered standard to Florida since it's behavior
-is volitile in the hopes that this will include more polls to smooth out its wild 
+is volatile in the hopes that this will include more polls to smooth out its wild 
 behavior from poll to poll.
 -->
 
