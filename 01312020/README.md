@@ -76,7 +76,7 @@ other states that deserve to be considered, I welcome you to provide me a
 convincing argument as to why. If I am convinced and I can find the data I 
 will include it.  
 
-![image](https://raw.github.com/gasduster99/primaryConcerns/master/swingVotes.jpg)
+![image](https://raw.github.com/gasduster99/primaryConcerns/master/01312020/swingVotes.jpg)
 
 Finally to boil the simulation down to a simple measure of success, I compute 
 the probability that each candidate will get more electoral college votes than 
