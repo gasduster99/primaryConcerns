@@ -68,15 +68,32 @@ against Trump. Summing these distributions over the relevant states gives a
 prediction for the number of electoral college votes each candidate will get 
 from those states.  
 
-In this simulation I have limited the prediction to Iowa, Florida, Michigan, 
-Nevada, New Hampshire, Virginia, Wisconsin, and North Carolina. Although I 
-would like to add Arizona, Minnesota, Ohio, and Pennsylvania, pending decent polls 
-from those states. I have tried to limit poll inclusion to polls present 
-on FiveThirtyEight appearing within the last two-three months and that achieve 
-at least a B+ pollster rating from FiveThirtyEight. If you can think of any 
-other states that deserve to be considered, I welcome you to provide me a 
-convincing argument as to why. If I am convinced and I can find the data I 
-will include it.  
+# Data Selection & Imputation
+
+In this simulation I have limited randomized prediction to Iowa, Florida, 
+Michigan, Nevada, New Hampshire, Virginia, Wisconsin, North Carolina, Arizona, 
+and Pennsylvania. Although I would like to add Minnesota and Ohio pending 
+decent polls from those states. I have tried to limit poll inclusion to polls 
+present on FiveThirtyEight appearing within the last two-three months and that 
+achieve at least a B+ pollster rating from FiveThirtyEight. When more than one 
+recent quality poll exists in a state, I aggregate those polls by adding their 
+sample sizes and I compute a weighted averaging of their proportions based on 
+their relative sample sizes.  
+
+Currently Pennsylvania and Arizona do not have recent, and high quality, polls. 
+Furthermore, the polls that do exists for these states exclude Buttigieg form 
+polling. Until new polls exist in these states I am forced to loosen the standard
+for poll inclusion in the following ways. For these states I extend poll 
+inclusion to polls that are up to four months old and lower the pollster standard 
+to at least a B- rating. I fill in Buttigeig's poll numbers, in missing cases, 
+by filling in his average among all other swing states, with a sample size of one. 
+This has the effect of increasing uncertanty about Buttigieg without swaying his 
+mean performance. 
+<!--
+I also extend this lowered standard to Florida since it's behavior
+is volitile in the hopes that this will include more polls to smooth out its wild 
+behavior from poll to poll.
+-->
 
 # A Measure of Success
 

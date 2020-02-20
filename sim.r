@@ -4,21 +4,183 @@ rm(list=ls())
 library(MCMCpack)
 
 #
+#FUNCTIONS
+#
+
+#
+combineNs = function(ns){
+	#ns: list of ns
+	
+	#
+	eyeL = sapply(ns, length)       
+        eye = which(eyeL==max(eyeL))[1]
+	#
+	wn = list()
+        for(n in names(ns[[eye]])){
+		Ns = 0
+		for(i in 1:length(ns)){
+			Ns = Ns + ns[[i]][[n]]
+		}
+		wn[[n]] = Ns
+	}
+	
+	#
+	return(wn)
+}
+
+#
+combinePs = function(ns, ps){
+	#ns: list of ns
+	#ps: list of poll vectors
+	#
+	#value: a weighted average of ps by ns
+	
+	#which is the longest list of candidates?
+	eyeL = sapply(ps, length)	
+	eye = which(eyeL==max(eyeL))[1]
+	#
+	wp = list()
+	for(n in names(ps[[eye]])){
+		#
+		wp[[n]] = c(0,0,0)
+		Ns = 0	
+		for(i in 1:length(ps)){ 
+			#
+			if( !n%in%names(ps[[i]]) ){ ps[[i]][[n]] = c(0,0,0) }	
+			#
+			wp[[n]] = wp[[n]]+ps[[i]][[n]]*ns[[i]][[n]]  #ns[i] 
+			Ns = Ns + ns[[i]][[n]]
+		}
+		#
+		wp[[n]] = wp[[n]]/Ns
+	}
+	
+	#
+	return( wp )
+}
+
+#
 #DATA
 #
 
+##size of poll
+#ns = list()
+#ns[['Iowa']] = 1689
+#ns[['Florida']] = 625
+#ns[['Michigan']] = 600
+#ns[['Nevada']] = 1505
+#ns[['NewHampshire']] = 2223
+#ns[['NewHampshire1']] = 1100
+#ns[['Virginia']] = 625
+#ns[['Wisconsin']] = 800
+#ns[['NorthCarolina']] = 1504	
+#ns[['Pennsylvania1']] = 661
+#ns[['Pennsylvania2']] = 410
+#ns[['Pennsylvania']] = ns[['Pennsylvania1']]+ns[['Pennsylvania2']]
+#ns[['Arizona1']] = 760
+#ns[['Arizona2']] = 652
+#ns[['Arizona']] = ns[['Arizona1']]+ns[['Arizona2']]
+
+#
+fill = 1
 #size of poll
 ns = list()
-ns[['Iowa']] = 1689
-ns[['Florida']] = 625
-ns[['Michigan']] = 600
-ns[['Nevada']] = 1505
-ns[['NewHampshire']] = 2223
-ns[['Virginia']] = 625
-ns[['Wisconsin']] = 800
-ns[['NorthCarolina']] = 1504	
+#Jan 25 2020 A+
+ns[['Iowa']] = list()
+ns[['Iowa']][['buttigieg']] = 1689
+ns[['Iowa']][['biden']]	    = 1689
+ns[['Iowa']][['klobuchar']] = 1689
+ns[['Iowa']][['warren']]    = 1689
+ns[['Iowa']][['sanders']]   = 1689
+ns[['Iowa']][['bloomberg']] = 1689 
+#Dec 31 2019 B+
+ns[['Florida']] = list()
+ns[['Florida']][['buttigieg']] = 625 
+ns[['Florida']][['biden']]     = 625
+ns[['Florida']][['warren']]    = 625
+ns[['Florida']][['sanders']]   = 625
+#Jan 15 2020 B+
+ns[['Michigan']] = list() 
+ns[['Michigan']][['buttigieg']] = 600
+ns[['Michigan']][['biden']]     = 600
+ns[['Michigan']][['warren']]    = 600
+ns[['Michigan']][['sanders']]   = 600
+ns[['Michigan']][['bloomberg']] = 600
+#Jan 9 2020 A-
+ns[['Nevada']] = list()
+ns[['Nevada']][['buttigieg']] = 1505
+ns[['Nevada']][['biden']]     = 1505
+ns[['Nevada']][['warren']]    = 1505
+ns[['Nevada']][['sanders']]   = 1505
+#Dec 31 2019 B+
+ns[['Virginia']] = list()
+ns[['Virginia']][['buttigieg']] = 625
+ns[['Virginia']][['biden']]     = 625
+ns[['Virginia']][['warren']]    = 625
+ns[['Virginia']][['sanders']]   = 625
+#Jan 15 2020 A/B
+ns[['Wisconsin']] = list()
+ns[['Wisconsin']][['buttigieg']] = 800
+ns[['Wisconsin']][['biden']]     = 800
+ns[['Wisconsin']][['warren']]    = 800
+ns[['Wisconsin']][['sanders']]   = 800
+#Feb 19 2020 A
+ns[['NorthCarolina']] = list()
+ns[['NorthCarolina']][['buttigieg']] = 2366
+ns[['NorthCarolina']][['biden']]     = 2366
+ns[['NorthCarolina']][['warren']]    = 2366
+ns[['NorthCarolina']][['sanders']]   = 2366
+ns[['NorthCarolina']][['bloomberg']] = 2366
+ns[['NorthCarolina']][['klobuchar']] = 2366
+##Nov 14 2019 A-
+#ns[['NorthCarolina']] = list()
+#ns[['NorthCarolina']][['buttigieg']] = 1504
+#ns[['NorthCarolina']][['biden']]     = 1504
+#ns[['NorthCarolina']][['warren']]    = 1504
+#ns[['NorthCarolina']][['sanders']]   = 1504	
+#Jan 26 2020 A+
+ns[['NewHampshire1']] = list()
+ns[['NewHampshire1']][['buttigieg']] = 2223
+ns[['NewHampshire1']][['biden']]     = 2223
+ns[['NewHampshire1']][['warren']]    = 2223
+ns[['NewHampshire1']][['sanders']]   = 2223
+#Feb 9 2020 -
+ns[['NewHampshire2']] = list()
+ns[['NewHampshire2']][['buttigieg']] = 1100
+ns[['NewHampshire2']][['biden']]     = 1100
+ns[['NewHampshire2']][['warren']]    = 1100
+ns[['NewHampshire2']][['sanders']]   = 1100
+#Nov 4 2019 A+
+ns[['Pennsylvania1']] = list()
+ns[['Pennsylvania1']][['buttigieg']] = fill
+ns[['Pennsylvania1']][['biden']]     = 661
+ns[['Pennsylvania1']][['warren']]    = 661
+ns[['Pennsylvania1']][['sanders']]   = 661
+#Nov 14 2019 A+
+ns[['Pennsylvania2']] = list() 
+ns[['Pennsylvania2']][['buttigieg']] = fill
+ns[['Pennsylvania2']][['biden']]     = 410
+ns[['Pennsylvania2']][['warren']]    = 410
+ns[['Pennsylvania2']][['sanders']]   = 410
+#ns[['Pennsylvania']] = ns[['Pennsylvania1']]+ns[['Pennsylvania2']]
+#Jan 8 2020 B
+ns[['Arizona1']] = list()
+ns[['Arizona1']][['buttigieg']] = 760
+ns[['Arizona1']][['biden']]     = 760
+ns[['Arizona1']][['warren']]    = 760 
+ns[['Arizona1']][['sanders']]   = 760
+#Nov 4 2019 A+
+ns[['Arizona2']] = list()
+ns[['Arizona2']][['buttigieg']] = fill 
+ns[['Arizona2']][['biden']]     = 652
+ns[['Arizona2']][['warren']]    = 652
+ns[['Arizona2']][['sanders']]   = 652
+#ns[['Arizona']] = ns[['Arizona1']]+ns[['Arizona2']]
 
-#poling probabilities (candiate, trump, other)
+#
+#
+
+#pooling probabilities (candiate, trump, other)
 p = list()
 #Jan 25 2020 A+
 p[['Iowa']] = list()
@@ -27,32 +189,26 @@ p[['Iowa']][['biden']]	   = c(0.44,0.46,0.1)
 p[['Iowa']][['klobuchar']] = c(0.41,0.46,0.13)
 p[['Iowa']][['warren']]	   = c(0.42,0.47,0.11)
 p[['Iowa']][['sanders']]   = c(0.42,0.48,0.1)
-p[['Iowa']][['bloomerberg']] = c(0.39,0.47,0.14)
+p[['Iowa']][['bloomberg']] = c(0.39,0.47,0.14)
 #Dec 31 2019 B+
 p[['Florida']] = list()
 p[['Florida']][['buttigieg']] = c(0.45,0.49,0.06)
 p[['Florida']][['biden']]     = c(0.47,0.45,0.08)
 p[['Florida']][['warren']]    = c(0.42,0.51,0.07)
-p[['Florida']][['sanders']] = c(0.44,0.49,0.07)
+p[['Florida']][['sanders']]   = c(0.44,0.49,0.07)
 #Jan 15 2020 B+
 p[['Michigan']] = list()
 p[['Michigan']][['buttigieg']] = c(0.47,0.43,0.1)
 p[['Michigan']][['biden']]     = c(0.50,0.44,0.06)
 p[['Michigan']][['warren']]    = c(0.48,0.45,0.07)
 p[['Michigan']][['sanders']]   = c(0.5,0.45,0.05)
-p[['Michigan']][['bloomerberg']] = c(0.49,0.42,0.09)
+p[['Michigan']][['bloomberg']] = c(0.49,0.42,0.09)
 #Jan 9 2020 A-
 p[['Nevada']] = list()
 p[['Nevada']][['buttigieg']] = c(0.41,0.40,0.19)
 p[['Nevada']][['biden']]     = c(0.47,0.39,0.14)
 p[['Nevada']][['warren']]    = c(0.43,0.42,0.15)
 p[['Nevada']][['sanders']]   = c(0.46,0.41,0.13)
-#Jan 26 2020 A+
-p[['NewHampshire']] = list()
-p[['NewHampshire']][['buttigieg']] = c(0.51,0.41,0.08)
-p[['NewHampshire']][['biden']]     = c(0.51,0.43,0.06)
-p[['NewHampshire']][['warren']]    = c(0.48,0.44,0.08)
-p[['NewHampshire']][['sanders']]   = c(0.51,0.43,0.06)
 #Dec 31 2019 B+
 p[['Virginia']] = list()
 p[['Virginia']][['buttigieg']] = c(0.45,0.47,0.08)
@@ -65,12 +221,74 @@ p[['Wisconsin']][['buttigieg']] = c(0.44,0.46,0.1)
 p[['Wisconsin']][['biden']]     = c(0.49,0.45,0.06)
 p[['Wisconsin']][['warren']]    = c(0.45,0.48,0.07)
 p[['Wisconsin']][['sanders']]   = c(0.47,0.46,0.07)
-#Nov 14 2019 A-
+#Feb 19 2020 A
 p[['NorthCarolina']] = list()
-p[['NorthCarolina']][['buttigieg']] = c(0.39,0.43,0.18)
-p[['NorthCarolina']][['biden']]     = c(0.45,0.43,0.12)
-p[['NorthCarolina']][['warren']]    = c(0.43,0.44,0.13)
-p[['NorthCarolina']][['sanders']]   = c(0.45,0.44,0.11)
+p[['NorthCarolina']][['buttigieg']] = c(0.45,0.46,0.09)
+p[['NorthCarolina']][['biden']]	    = c(0.49,0.45,0.06)
+p[['NorthCarolina']][['klobuchar']] = c(0.42,0.46,0.12)
+p[['NorthCarolina']][['warren']]    = c(0.44,0.48,0.08)
+p[['NorthCarolina']][['sanders']]   = c(0.50,0.45,0.05)
+p[['NorthCarolina']][['bloomberg']] = c(0.49,0.43,0.08)
+##Nov 14 2019 A-
+#p[['NorthCarolina']] = list()
+#p[['NorthCarolina']][['buttigieg']] = c(0.39,0.43,0.18)
+#p[['NorthCarolina']][['biden']]     = c(0.45,0.43,0.12)
+#p[['NorthCarolina']][['warren']]    = c(0.43,0.44,0.13)
+#p[['NorthCarolina']][['sanders']]   = c(0.45,0.44,0.11)
+#Jan 26 2020 A+
+p[['NewHampshire1']] = list()
+p[['NewHampshire1']][['buttigieg']] = c(0.51,0.41,0.08)
+p[['NewHampshire1']][['biden']]     = c(0.51,0.43,0.06)
+p[['NewHampshire1']][['warren']]    = c(0.48,0.44,0.08)
+p[['NewHampshire1']][['sanders']]   = c(0.51,0.43,0.06)
+#Feb 9 2020 -
+p[['NewHampshire2']] = list()
+p[['NewHampshire2']][['buttigieg']] = c(0.46,0.45,0.09)
+p[['NewHampshire2']][['biden']]     = c(0.44,0.46,0.1)
+p[['NewHampshire2']][['warren']]    = c(0.41,0.47,0.12)
+p[['NewHampshire2']][['sanders']]   = c(0.44,0.47,0.09)
+#Jan 8 2020 B
+p[['Arizona1']] = list()
+p[['Arizona1']][['buttigieg']] = c(0.44,0.47,0.09)
+p[['Arizona1']][['biden']]     = c(0.46,0.46,0.08)
+p[['Arizona1']][['warren']]    = c(0.45,0.47,0.08)
+p[['Arizona1']][['sanders']]   = c(0.46,0.47,0.07)
+#Nov 4 2019 A+
+p[['Arizona2']] = list()
+p[['Arizona2']][['biden']]     = c(0.49,0.46,0.05)
+p[['Arizona2']][['warren']]    = c(0.46,0.47,0.07)
+p[['Arizona2']][['sanders']]   = c(0.45,0.49,0.06)
+
+#deal with buttigieg
+i = 1
+nBoot = list()
+for(n in names(p)){
+	nBoot[[i]] = ns[[n]]
+	i = i+1
+}
+pBoot = combinePs(nBoot, p)
+
+#Nov 4 2019 A+
+p[['Pennsylvania1']] = list()
+p[['Pennsylvania1']][['buttigieg']] = pBoot[['buttigieg']]
+p[['Pennsylvania1']][['biden']]     = c(0.46,0.45,0.09)
+p[['Pennsylvania1']][['warren']]    = c(0.44,0.45,0.11)
+p[['Pennsylvania1']][['sanders']]   = c(0.44,0.45,0.11)
+#Nov 14 2019 A+
+p[['Pennsylvania2']] = list() 
+p[['Pennsylvania2']][['biden']]     = c(0.52,0.43,0.05)
+p[['Pennsylvania2']][['warren']]    = c(0.50,0.45,0.05)
+p[['Pennsylvania2']][['sanders']]   = c(0.50,0.45,0.05)
+
+#Aggregate Polls
+p[['NewHampshire']] = combinePs( list(ns[['NewHampshire1']], ns[['NewHampshire2']]), list(p[['NewHampshire1']], p[['NewHampshire']]) ) #p[['NewHampshire']] = combinePolls( c(ns[['NewHampshire1']], ns[['NewHampshire']]), list(p[['NewHampshire1']], p[['NewHampshire']]) )
+ns[['NewHampshire']] = combineNs( list(ns[['NewHampshire1']], ns[['NewHampshire2']]) ) #ns[['NewHampshire']] = ns[['NewHampshire']] + ns[['NewHampshire1']]
+#
+p[['Pennsylvania']] = combinePs( list(ns[['Pennsylvania1']], ns[['Pennsylvania2']]), list(p[['Pennsylvania1']], p[['Pennsylvania2']]) )
+ns[['Pennsylvania']] = combineNs( list(ns[['Pennsylvania1']], ns[['Pennsylvania2']]) )
+#
+p[['Arizona']] = combinePs( list(ns[['Arizona1']], ns[['Arizona2']]), list(p[['Arizona1']], p[['Arizona2']]) )
+ns[['Arizona']] = combineNs( list(ns[['Arizona1']], ns[['Arizona2']]) )
 
 #number of electoral college votes in each state
 votes = list()
@@ -85,6 +303,7 @@ votes[['NorthCarolina']] = 15
 votes[['Pennsylvania']] = 20
 votes[['Virginia']] = 13
 votes[['Wisconsin']] = 10
+votes[['Arizona']] = 11
 
 #number of likely voters in east state as of 2016 http://www.electproject.org/2016g
 size = list()
@@ -99,6 +318,7 @@ size[['NorthCarolina']] = 4769640
 size[['Pennsylvania']] = 6165478
 size[['Virginia']] = 3984631
 size[['Wisconsin']] = 2976150
+size[['Arizona']] = 2661497	
 
 #define to who and were I have full data to run simulation 
 peeps = c("buttigieg", "biden", "warren", "sanders")
@@ -110,7 +330,9 @@ states = c(
 	"NewHampshire", 
 	"Virginia", 
 	"Wisconsin", 
-	"NorthCarolina"
+	"NorthCarolina",
+	"Pennsylvania",
+	"Arizona"
 )
 
 #
@@ -129,7 +351,7 @@ cast[['oCast']] = matrix(0, nrow=M, ncol=length(peeps))
 colnames(cast[['dCast']]) = peeps
 for(state in states){
 	for(peep in peeps){
-		post = rdirichlet(M, ns[[state]]*p[[state]][[peep]]+1)
+		post = rdirichlet(M, ns[[state]][[peep]]*p[[state]][[peep]]+1)
 		who = apply(post, 1, function(x){
 			#
 			pred = rmultinom(1, size[[state]], x)
@@ -201,7 +423,7 @@ boxplot(bbox,
         #names   = names,
         at      = seq(1, length(peeps)*4)[-seq(4, length(peeps)*4, 4)],
         ylab    = "Electoral College Votes",
-        main    = sprintf("*** Electoral College Votes From AZ, MN, OH, PA, NE#2, and ME#2 Left Out ***\nPr(eVotes\u2265%s) = %s", effThresh, paste(bl, collapse=c("")))
+        main    = sprintf("*** Electoral College Votes From MN, OH, NE#2, and ME#2 Left Out ***\nPr(eVotes\u2265%s) = %s", effThresh, paste(bl, collapse=c("")))
 )
 abline(h=270, lwd=3)
 abline(h=effThresh, lwd=2, lty=2)
