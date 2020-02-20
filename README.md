@@ -125,13 +125,13 @@ judge the election outcome.
 
 ![image](https://raw.github.com/gasduster99/primaryConcerns/master/collegeVotes.jpg)
 
-Again I would like to add Arizona, Minnesota, Ohio, and Pennsylvania, pending decent 
-polls in these states. Since I do not have such polls, I opted to leave them out
-of the forecast entirely. Further I have left out the 2nd Districts of Nebraska and 
+Again I would like to add Minnesota and Ohio pending decent polls in these 
+states. Since I do not have such polls, I opted to leave them out of the 
+forecast entirely. Further I have left out the 2nd Districts of Nebraska and 
 Maine. In total, this analysis leaves 61 electoral college votes unaccounted for. I 
 figure it is less misleading to obviously exclude them from the analysis than to make 
 a poorly informed guess about their outcome. Thus this lowers the effictive threshold 
-for the minimum number of electoral college votes need to win to 239. 
+for the minimum number of electoral college votes need to win to 254. 
 
 
 
