@@ -63,24 +63,6 @@ combinePs = function(ns, ps){
 #DATA
 #
 
-##size of poll
-#ns = list()
-#ns[['Iowa']] = 1689
-#ns[['Florida']] = 625
-#ns[['Michigan']] = 600
-#ns[['Nevada']] = 1505
-#ns[['NewHampshire']] = 2223
-#ns[['NewHampshire1']] = 1100
-#ns[['Virginia']] = 625
-#ns[['Wisconsin']] = 800
-#ns[['NorthCarolina']] = 1504	
-#ns[['Pennsylvania1']] = 661
-#ns[['Pennsylvania2']] = 410
-#ns[['Pennsylvania']] = ns[['Pennsylvania1']]+ns[['Pennsylvania2']]
-#ns[['Arizona1']] = 760
-#ns[['Arizona2']] = 652
-#ns[['Arizona']] = ns[['Arizona1']]+ns[['Arizona2']]
-
 #
 fill = 1
 #size of poll
@@ -93,12 +75,6 @@ ns[['Iowa']][['klobuchar']] = 1689
 ns[['Iowa']][['warren']]    = 1689
 ns[['Iowa']][['sanders']]   = 1689
 ns[['Iowa']][['bloomberg']] = 1689 
-#Dec 31 2019 B+
-ns[['Florida']] = list()
-ns[['Florida']][['buttigieg']] = 625 
-ns[['Florida']][['biden']]     = 625
-ns[['Florida']][['warren']]    = 625
-ns[['Florida']][['sanders']]   = 625
 #Jan 15 2020 B+
 ns[['Michigan']] = list() 
 ns[['Michigan']][['buttigieg']] = 600
@@ -118,12 +94,6 @@ ns[['Virginia']][['buttigieg']] = 625
 ns[['Virginia']][['biden']]     = 625
 ns[['Virginia']][['warren']]    = 625
 ns[['Virginia']][['sanders']]   = 625
-#Jan 15 2020 A/B
-ns[['Wisconsin']] = list()
-ns[['Wisconsin']][['buttigieg']] = 800
-ns[['Wisconsin']][['biden']]     = 800
-ns[['Wisconsin']][['warren']]    = 800
-ns[['Wisconsin']][['sanders']]   = 800
 #Feb 19 2020 A
 ns[['NorthCarolina']] = list()
 ns[['NorthCarolina']][['buttigieg']] = 2366
@@ -132,12 +102,43 @@ ns[['NorthCarolina']][['warren']]    = 2366
 ns[['NorthCarolina']][['sanders']]   = 2366
 ns[['NorthCarolina']][['bloomberg']] = 2366
 ns[['NorthCarolina']][['klobuchar']] = 2366
-##Nov 14 2019 A-
-#ns[['NorthCarolina']] = list()
-#ns[['NorthCarolina']][['buttigieg']] = 1504
-#ns[['NorthCarolina']][['biden']]     = 1504
-#ns[['NorthCarolina']][['warren']]    = 1504
-#ns[['NorthCarolina']][['sanders']]   = 1504	
+#Jan 15 2020 A/B
+ns[['Wisconsin1']] = list()
+ns[['Wisconsin1']][['buttigieg']] = 800
+ns[['Wisconsin1']][['biden']]     = 800
+ns[['Wisconsin1']][['warren']]    = 800
+ns[['Wisconsin1']][['sanders']]   = 800
+#Jan 9 2020 A-
+ns[['Wisconsin2']] = list()
+ns[['Wisconsin2']][['buttigieg']] = 1504
+ns[['Wisconsin2']][['biden']]     = 1504
+ns[['Wisconsin2']][['warren']]    = 1504
+ns[['Wisconsin2']][['sanders']]   = 1504
+#Dec 12 2019 A/B
+ns[['Wisconsin3']] = list()
+ns[['Wisconsin3']][['buttigieg']] = 800
+ns[['Wisconsin3']][['biden']]     = 800
+ns[['Wisconsin3']][['warren']]    = 800
+ns[['Wisconsin3']][['sanders']]   = 800
+#Dec 31 2019 B+
+ns[['Florida1']] = list()
+ns[['Florida1']][['buttigieg']] = 625 
+ns[['Florida1']][['biden']]     = 625
+ns[['Florida1']][['warren']]    = 625
+ns[['Florida1']][['sanders']]   = 625
+##Jan 15 2020 B/C
+#ns[['Florida2']] = list()
+#ns[['Florida2']][['buttigieg']] = 1285 
+#ns[['Florida2']][['biden']]     = 1285
+#ns[['Florida2']][['warren']]    = 1285
+#ns[['Florida2']][['sanders']]   = 1285
+##Jan 21 2019 B+
+#ns[['Florida3']] = list()
+#ns[['Florida3']][['buttigieg']] = 608 
+#ns[['Florida3']][['biden']]     = 608
+#ns[['Florida3']][['warren']]    = 608
+#ns[['Florida3']][['bloomberg']] = 608
+#ns[['Florida3']][['sanders']]   = fill
 #Jan 26 2020 A+
 ns[['NewHampshire1']] = list()
 ns[['NewHampshire1']][['buttigieg']] = 2223
@@ -190,12 +191,6 @@ p[['Iowa']][['klobuchar']] = c(0.41,0.46,0.13)
 p[['Iowa']][['warren']]	   = c(0.42,0.47,0.11)
 p[['Iowa']][['sanders']]   = c(0.42,0.48,0.1)
 p[['Iowa']][['bloomberg']] = c(0.39,0.47,0.14)
-#Dec 31 2019 B+
-p[['Florida']] = list()
-p[['Florida']][['buttigieg']] = c(0.45,0.49,0.06)
-p[['Florida']][['biden']]     = c(0.47,0.45,0.08)
-p[['Florida']][['warren']]    = c(0.42,0.51,0.07)
-p[['Florida']][['sanders']]   = c(0.44,0.49,0.07)
 #Jan 15 2020 B+
 p[['Michigan']] = list()
 p[['Michigan']][['buttigieg']] = c(0.47,0.43,0.1)
@@ -215,12 +210,6 @@ p[['Virginia']][['buttigieg']] = c(0.45,0.47,0.08)
 p[['Virginia']][['biden']]     = c(0.49,0.45,0.06)
 p[['Virginia']][['warren']]    = c(0.44,0.48,0.08)
 p[['Virginia']][['sanders']]   = c(0.45,0.51,0.04)
-#Jan 15 2020 A/B
-p[['Wisconsin']] = list()
-p[['Wisconsin']][['buttigieg']] = c(0.44,0.46,0.1)
-p[['Wisconsin']][['biden']]     = c(0.49,0.45,0.06)
-p[['Wisconsin']][['warren']]    = c(0.45,0.48,0.07)
-p[['Wisconsin']][['sanders']]   = c(0.47,0.46,0.07)
 #Feb 19 2020 A
 p[['NorthCarolina']] = list()
 p[['NorthCarolina']][['buttigieg']] = c(0.45,0.46,0.09)
@@ -229,12 +218,42 @@ p[['NorthCarolina']][['klobuchar']] = c(0.42,0.46,0.12)
 p[['NorthCarolina']][['warren']]    = c(0.44,0.48,0.08)
 p[['NorthCarolina']][['sanders']]   = c(0.50,0.45,0.05)
 p[['NorthCarolina']][['bloomberg']] = c(0.49,0.43,0.08)
-##Nov 14 2019 A-
-#p[['NorthCarolina']] = list()
-#p[['NorthCarolina']][['buttigieg']] = c(0.39,0.43,0.18)
-#p[['NorthCarolina']][['biden']]     = c(0.45,0.43,0.12)
-#p[['NorthCarolina']][['warren']]    = c(0.43,0.44,0.13)
-#p[['NorthCarolina']][['sanders']]   = c(0.45,0.44,0.11)
+#Jan 15 2020 A/B
+p[['Wisconsin1']] = list()
+p[['Wisconsin1']][['buttigieg']] = c(0.44,0.46,0.1)
+p[['Wisconsin1']][['biden']]     = c(0.49,0.45,0.06)
+p[['Wisconsin1']][['warren']]    = c(0.45,0.48,0.07)
+p[['Wisconsin1']][['sanders']]   = c(0.47,0.46,0.07)
+#Jan 9 2020 A-
+p[['Wisconsin2']] = list()
+p[['Wisconsin2']][['buttigieg']] = c(0.42,0.41,0.17)
+p[['Wisconsin2']][['biden']]     = c(0.46,0.41,0.13)
+p[['Wisconsin2']][['warren']]    = c(0.44,0.42,0.14)
+p[['Wisconsin2']][['sanders']]   = c(0.46,0.42,0.12)
+#Dec 12 2019 A/B
+p[['Wisconsin3']] = list()
+p[['Wisconsin3']][['buttigieg']] = c(0.43,0.44,0.13)
+p[['Wisconsin3']][['biden']]     = c(0.47,0.46,0.07)
+p[['Wisconsin3']][['warren']]    = c(0.44,0.45,0.11)
+p[['Wisconsin3']][['sanders']]   = c(0.45,0.47,0.08)
+#Dec 31 2019 B+
+p[['Florida1']] = list()
+p[['Florida1']][['buttigieg']] = c(0.45,0.49,0.06)
+p[['Florida1']][['biden']]     = c(0.47,0.45,0.08)
+p[['Florida1']][['warren']]    = c(0.42,0.51,0.07)
+p[['Florida1']][['sanders']]   = c(0.44,0.49,0.07)
+##Jan 15 2020 B/C
+#p[['Florida2']] = list()
+#p[['Florida2']][['buttigieg']] = c(0.50,0.50,0.00)
+#p[['Florida2']][['biden']]     = c(0.51,0.49,0.00)
+#p[['Florida2']][['warren']]    = c(0.51,0.49,0.00)
+#p[['Florida2']][['sanders']]   = c(0.53,0.49,0.00)
+##Jan 15 2020 B/C
+#p[['Florida3']] = list()
+#p[['Florida3']][['buttigieg']] = c(0.43,0.50,0.07)
+#p[['Florida3']][['biden']]     = c(0.45,0.49,0.01)
+#p[['Florida3']][['warren']]    = c(0.43,0.50,0.07)
+#p[['Florida3']][['bloomberg']] = c(0.44,0.49,0.02)
 #Jan 26 2020 A+
 p[['NewHampshire1']] = list()
 p[['NewHampshire1']][['buttigieg']] = c(0.51,0.41,0.08)
@@ -281,7 +300,14 @@ p[['Pennsylvania2']][['warren']]    = c(0.50,0.45,0.05)
 p[['Pennsylvania2']][['sanders']]   = c(0.50,0.45,0.05)
 
 #Aggregate Polls
-p[['NewHampshire']] = combinePs( list(ns[['NewHampshire1']], ns[['NewHampshire2']]), list(p[['NewHampshire1']], p[['NewHampshire']]) ) #p[['NewHampshire']] = combinePolls( c(ns[['NewHampshire1']], ns[['NewHampshire']]), list(p[['NewHampshire1']], p[['NewHampshire']]) )
+#
+p[['Wisconsin']] = combinePs( list(ns[['Wisconsin1']], ns[['Wisconsin2']], ns[['Wisconsin3']]), list(p[['Wisconsin1']], p[['Wisconsin2']], p[['Wisconsin3']]) )
+ns[['Wisconsin']] = combineNs( list(ns[['Wisconsin1']], ns[['Wisconsin2']], ns[['Wisconsin3']]) ) 
+#
+p[['Florida']] = combinePs( list(ns[['Florida1']]), list(p[['Florida1']]) )
+ns[['Florida']] = combineNs( list(ns[['Florida1']]) ) 
+#
+p[['NewHampshire']] = combinePs( list(ns[['NewHampshire1']], ns[['NewHampshire2']]), list(p[['NewHampshire1']], p[['NewHampshire2']]) ) #p[['NewHampshire']] = combinePolls( c(ns[['NewHampshire1']], ns[['NewHampshire']]), list(p[['NewHampshire1']], p[['NewHampshire']]) )
 ns[['NewHampshire']] = combineNs( list(ns[['NewHampshire1']], ns[['NewHampshire2']]) ) #ns[['NewHampshire']] = ns[['NewHampshire']] + ns[['NewHampshire1']]
 #
 p[['Pennsylvania']] = combinePs( list(ns[['Pennsylvania1']], ns[['Pennsylvania2']]), list(p[['Pennsylvania1']], p[['Pennsylvania2']]) )
@@ -356,7 +382,7 @@ for(state in states){
 			#
 			pred = rmultinom(1, size[[state]], x)
 			#
-			if(pred[1]==pred[2]){ return( sample(which(pred==max(pred)),1) ) 
+			if(pred[1]==pred[2] | pred[1]==pred[3] | pred[2]==pred[3]){ return( sample(which(pred==max(pred)),1) ) 
 			}else{ return(which(pred==max(pred))) }
 		})
 		#democrate numbers
