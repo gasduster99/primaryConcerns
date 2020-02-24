@@ -80,20 +80,14 @@ recent quality poll exists in a state, I aggregate those polls by adding their
 sample sizes and I compute a weighted averaging of their proportions based on 
 their relative sample sizes.  
 
-Currently Pennsylvania and Arizona do not have recent, and high quality, polls. 
-Furthermore, the polls that do exists for these states exclude Buttigieg from 
-polling. Until new polls exist in these states I am forced to loosen the standard
-for poll inclusion. For these states I extend poll inclusion to polls that are 
-up to four months old and lower the pollster standard to at least a B- rating. 
-I fill in Buttigeig's poll numbers, in missing cases, by filling in his 
-average among all other swing states, with a sample size of one.  This has the 
-effect of increasing uncertainty about Buttigieg without swaying his mean 
-performance. 
-<!--
-I also extend this lowered standard to Florida since it's behavior
-is volatile in the hopes that this will include more polls to smooth out its wild 
-behavior from poll to poll.
--->
+Some states (right now just Arizona) do not have recent, and high quality, polls. 
+Furthermore, the polls that do exists for these states exclude some candiates. 
+Until new polls exist in these states I loosen the standard for poll inclusion
+in these states. For these states I extend poll inclusion to polls that are up 
+to four months old and lower the pollster standard to at least a B- rating. I 
+fill in missing candidate's poll numbers by filling in the average among all 
+other swing states, with a sample size of one. This has the effect of increasing 
+uncertainty about Buttigieg without swaying his mean performance. 
 
 # A Measure of Success
 
@@ -128,7 +122,7 @@ judge the election outcome.
 Again I would like to add Minnesota and Ohio pending decent polls in these 
 states. Since I do not have such polls, I opted to leave them out of the 
 forecast entirely. Further I have left out the 2nd Districts of Nebraska and 
-Maine. In total, this analysis leaves 61 electoral college votes unaccounted for. I 
+Maine. In total, this analysis leaves 30 electoral college votes unaccounted for. I 
 figure it is less misleading to obviously exclude them from the analysis than to make 
 a poorly informed guess about their outcome. Thus this lowers the effictive threshold 
 for the minimum number of electoral college votes need to win to 254. 
