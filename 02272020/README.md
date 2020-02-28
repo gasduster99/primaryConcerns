@@ -117,7 +117,7 @@ Each distribution is compared against the 270 electoral college vote line (the
 minimum number of electoral college votes required to win the election) to 
 judge the election outcome.  
 
-![image](https://raw.github.com/gasduster99/primaryConcerns/master/02/272020/collegeVotes.jpg)
+![image](https://raw.github.com/gasduster99/primaryConcerns/master/02272020/collegeVotes.jpg)
 
 Again I would like to add Minnesota and Ohio pending decent polls in these 
 states. Since I do not have such polls, I opted to leave them out of the 
