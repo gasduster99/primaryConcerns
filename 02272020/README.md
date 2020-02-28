@@ -76,25 +76,18 @@ and Pennsylvania. Although I would like to add Minnesota and Ohio pending
 decent polls from those states. I have tried to limit poll inclusion to polls 
 present on FiveThirtyEight appearing within the last two-three months and that 
 achieve at least a B+ pollster rating from FiveThirtyEight. When more than one 
-recent quality poll exists in a state, I aggregate those polls by averaging polled 
-proportions and sample sizes. Proportion averages are weighted base upon their 
-relative sample sizes. In order to handle the lack of independence between 
-(and within) polls, sample sizes must be deflated to account for sampling 
-correlations. I apply a sample size deflation factor which when run on the 
-2016 election produces a similar election outcome probability as 
-FiveThirtyEight did (H:0.7 v T:0.3). If I had access to the raw poll data I 
-could compute the effective sample size directly by estimating the within poll 
-correlations. Better yet, a weighting scheme as used by FiveThirtyEight could 
-be used to estimate Kish's Effective Sample Size. 
+recent quality poll exists in a state, I aggregate those polls by adding their 
+sample sizes and I compute a weighted averaging of their proportions based on 
+their relative sample sizes.  
 
-Some states do not have recent, and high quality, polls. Furthermore, the 
-polls that do exists for these states exclude some candiates. Until new polls 
-exist in these states I loosen the standard for poll inclusion in these states. 
-For these states I extend poll inclusion to polls that are up to four months 
-old and lower the pollster standard to at least a B- rating. I fill in missing 
-candidate's poll numbers by filling in the average among all other swing states, 
-with a sample size of one. This has the effect of increasing uncertainty without 
-swaying mean performance. 
+Some states (right now just Arizona) do not have recent, and high quality, polls. 
+Furthermore, the polls that do exists for these states exclude some candiates. 
+Until new polls exist in these states I loosen the standard for poll inclusion
+in these states. For these states I extend poll inclusion to polls that are up 
+to four months old and lower the pollster standard to at least a B- rating. I 
+fill in missing candidate's poll numbers by filling in the average among all 
+other swing states, with a sample size of one. This has the effect of increasing 
+uncertainty about Buttigieg without swaying his mean performance. 
 
 # A Measure of Success
 
