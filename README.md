@@ -84,7 +84,7 @@ correlations. I apply a sample size deflation factor which when run on the
 2016 election produces a similar election outcome probability as 
 FiveThirtyEight did (H:0.7 v T:0.3). If I had access to the raw poll data I 
 could compute the effective sample size directly by estimating the within poll 
-correlations. Better yet, a weighting scheme as used by FiveThirtyEight could 
+correlations. Better yet, a weighting scheme (as used by FiveThirtyEight) could 
 be used to estimate Kish's Effective Sample Size. 
 
 Some states do not have recent, and high quality, polls. Furthermore, the 
